@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+	<div id="app"></div>
+	<script src="./../../common/vue.min.js"></script>
+	<script>
+		const config = {
+			data: {
+				products: [
+					{id: '01234', name: 'xiaomi', stock: 23},
+					{id: '01235', name: 'vivo', stock: 14},
+					{id: '01236', name: 'huawei', stock: 9}
+				]
+			},
+			computed: {
+				total(){
+					return this.products.reduce((v, item) => v + item.stock, 0);
+				}
+			},
+			render(h){
+				const lis = this.products.map(item => h('li', `商品名称：${item.name}，商品数量：${item.stock}`));
+
+				return h('div', [
+					h('h1', '标题：商品管理系统'),
+					h('ul', lis),
+					h('p', `商品总数：${this.total}`)
+				]);
+			}
+		};
+
+		const vm = new Vue(config);
+		vm.$mount('#app');
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>钟表效果</title>
+	<style>
+		.clock {
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			margin: 50px auto;
+			width: 200px;
+			height: 200px;
+			border-radius: 50%;
+			background: url('./../../images/clock.png') no-repeat center top/100%;
+		}
+		.clock .hour {
+			position: absolute;
+			top: calc(50% - 6px);
+			left: calc(50% - 6px);
+			width: 10px;
+			height: 55px;
+			background: url('./../../images/hour.png') no-repeat center/auto 100%;
+			transform-origin: 5px 6px;
+			transform: rotate(180deg);
+			animation: rotate 432s infinite steps(60, end) both;
+		}
+
+		.clock .minute {
+			position: absolute;
+			top: calc(50% - 6px);
+			left: calc(50% - 6px);
+			width: 10px;
+			height: 68px;
+			background: url('./../../images/minute.png') no-repeat center/auto 100%;
+			transform-origin: 5px 6px;
+			transform: rotate(180deg);
+			animation: rotate 36s infinite steps(60, end) both;
+		}
+
+		.clock .second {
+			position: absolute;
+			top: calc(50% - 27px);
+			left: calc(50% - 5px);
+			width: 10px;
+			height: 100px;
+			background: url('./../../images/second.png') no-repeat center/auto 100%;
+			transform-origin: 5px 27px;
+			transform: rotate(180deg);
+			animation: rotate .6s infinite steps(60, end) both;
+		}
+
+		@keyframes rotate {
+			0% {
+				will-change: transform;
+				transform: rotate(180deg);
+			}
+
+			100% {
+				transform: rotate(540deg);
+			}
+		}
+	</style>
+</head>
+<body>
+<div class="clock">
+	<div class="hour"></div>
+	<div class="minute"></div>
+	<div class="second"></div>
+</div>
+</body>
+</html>

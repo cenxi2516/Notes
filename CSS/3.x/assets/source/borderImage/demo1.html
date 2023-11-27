@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>border-image</title>
+    <style>
+        .box {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100px;
+            height: 100px;
+            border: 10px solid #000;
+            border-image-source: url('./../../images/border-image.png');
+            border-image-slice: calc(100% / 3);
+            border-image-repeat: round;
+            border-image-width: 2;
+            border-image-outset: 20px;
+            background-color: #00f;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="box">
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文本反裁背景图</title>
+    <style>
+    	.box {
+    		position: fixed;
+    		top: 50%;
+    		left: 50%;
+    		transform: translate(-50%, -50%);
+    		font-size: 50px;
+    		font-weight: bold;
+    		background-image: url('./../../images/border-image-slice.webp');
+    		-webkit-background-clip: text;
+    		-webkit-text-fill-color: transparent;
+    		cursor: pointer;
+    		transition: .5s;
+    	}
+
+    	.box:hover {
+    		background-position: center;
+    	}
+    </style>
+</head>
+
+<body>
+	<div class="box">李顺祥</div>
+</body>
+
+</html>

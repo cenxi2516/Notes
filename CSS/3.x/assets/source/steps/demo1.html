@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>逐帧动画</title>
+    <style>
+    	.box {
+    		position: fixed;
+    		top: 50%;
+    		left: 50%;
+    		transform: translate(-50%, -50%);
+    		width: 100px;
+    		height: 100px;
+    		animation: color-change 2s steps(2, start) both;
+    	}
+
+    	@keyframes color-change {
+    		0% {
+                will-change: background-color;
+    			background-color: #f00;
+    		}
+
+    		25% {
+    			background-color: #0f0;
+    		}
+
+    		50% {
+    			background-color: #00f;
+    		}
+
+    		75% {
+    			background-color: #ff0;
+    		}
+
+    		100% {
+    			background-color: #0ff;
+    		}
+    	}
+    </style>
+</head>
+
+<body>
+	<div class="box"></div>
+</body>
+
+</html>
